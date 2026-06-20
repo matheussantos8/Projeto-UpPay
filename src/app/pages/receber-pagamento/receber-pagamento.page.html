@@ -1,0 +1,62 @@
+<ion-content>
+  <div class="receber-header">
+    <ion-button fill="clear" routerLink="/pix" class="btn-back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <h1>Receber Pix</h1>
+    <ion-button fill="clear" routerLink="/ajuda-receber-pix" class="btn-help">
+      <ion-icon name="help-circle-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="receber-container">
+    <p class="section-title">Qual o valor que deseja receber?</p>
+
+    <ion-item lines="none" class="custom-input">
+      <ion-input 
+        type="text" 
+        label="Valor (opcional)..." 
+        labelPlacement="floating" 
+        (ionInput)="formatarMoeda($event)"
+        inputmode="numeric">
+        <ion-button slot="end" fill="clear" class="btn-avancar" (click)="gerarCobranca()">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-input>
+    </ion-item>
+    
+    <p class="hint-text">Se não digitar um valor, a pessoa que for pagar poderá escolher o valor a transferir.</p>
+  </div>
+
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="isModalOpen = false" class="modal-qrcode">
+    <ng-template>
+      <ion-header class="ion-no-border">
+        <ion-toolbar>
+          <ion-title>QR Code Gerado</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="isModalOpen = false">
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <div class="modal-content-qrcode">
+        <p class="modal-valor-text">
+          {{ valorReceber ? 'Valor: ' + valorReceber : 'Valor em aberto' }}
+        </p>
+
+        <div class="qrcode-box">
+          <canvas #qrcodeCanvas></canvas>
+        </div>
+
+        <p class="modal-hint">Mostre o QR code acima para quem vai te pagar ou copie o código Pix abaixo.</p>
+
+        <ion-button expand="block" fill="outline" class="btn-copiar" (click)="copiarChave()">
+          <ion-icon name="copy-outline" slot="start"></ion-icon>
+          Copiar Código Pix
+        </ion-button>
+      </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>

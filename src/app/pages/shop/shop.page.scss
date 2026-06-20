@@ -1,0 +1,178 @@
+ion-content {
+    --background: var(--ion-color-primary);
+  }
+  
+  .shop-header {
+    padding: 40px 20px 20px 20px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+  
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+  
+      .header-esquerda {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+  
+        .btn-back {
+          --color: #000000;
+          background: #ffffff;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          margin: 0;
+          --padding-start: 0;
+          --padding-end: 0;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+      }
+  
+      h1 {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0;
+      }
+  
+      .btn-help {
+        --color: #ffffff;
+        font-size: 1.6rem;
+        margin: 0;
+      }
+    }
+  
+    .saldo-card {
+      background: #526a77;
+      border: 1px solid #ffffff;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+  
+      .saldo-label {
+        color: #cccccc;
+        font-size: 0.85rem;
+      }
+  
+      .saldo-valor {
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+  }
+  
+  .shop-container {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .section-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+  }
+  
+  .categorias-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .categoria-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      min-width: 70px;
+      cursor: pointer;
+  
+      .categoria-icon {
+        background: #526a77;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 1.5rem;
+      }
+  
+      span {
+        color: #ffffff;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 5px;
+  
+    .produto-card {
+      background: #526a77;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  
+      .produto-banner {
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .produto-icon {
+          color: #ffffff;
+          font-size: 2.5rem;
+        }
+      }
+  
+      .produto-info {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+  
+        h3 {
+          color: #ffffff;
+          font-size: 0.95rem;
+          font-weight: bold;
+          margin: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+  
+        .produto-categoria {
+          color: #cccccc;
+          font-size: 0.75rem;
+          margin: 0;
+        }
+  
+        .produto-preco {
+          color: #ffffff;
+          font-size: 0.8rem;
+          font-weight: bold;
+          margin-top: 6px;
+        }
+      }
+    }
+  }

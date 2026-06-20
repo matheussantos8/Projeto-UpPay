@@ -1,0 +1,58 @@
+<ion-content [class.camera-active]="isScanning">
+  
+  <div class="pagamento-header" *ngIf="!isScanning">
+    <ion-button fill="clear" routerLink="/pix" class="btn-back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+
+    <h1>Pagar com Pix</h1>
+    <ion-button fill="clear" routerLink="/ajuda-pagar-pix" class="btn-help">
+      <ion-icon name="help-circle-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div class="pagamento-container" *ngIf="!isScanning">
+    <p class="section-title">Para quem você quer pagar?</p>
+
+    <ion-item lines="none" class="custom-input">
+      <ion-input 
+        type="text" 
+        label="Chave ou código Copia e Cola..." 
+        labelPlacement="floating"
+        [(ngModel)]="chaveDestinatario"
+        (ionBlur)="verificarChaveColada()"
+        name="chavePix">
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="custom-input" style="margin-top: 12px;">
+      <ion-input 
+        type="text" 
+        label="Valor" 
+        labelPlacement="floating" 
+        [(ngModel)]="valorPagar" 
+        name="valorPix"
+        (ionInput)="formatarMoeda($event)"
+        inputmode="numeric">
+        
+        <ion-button slot="end" fill="clear" class="btn-avancar" (click)="enviarPix()">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-input>
+    </ion-item>
+
+    <div class="scan-section">
+      <button class="scan-box" (click)="comecarEscaneamento()">
+        <ion-icon name="camera-outline"></ion-icon>
+        <span>Escanear</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="scanner-ui-container" *ngIf="isScanning">
+    <div class="mira-scanner"></div>
+    <ion-button expand="block" color="danger" class="btn-cancelar-scan" (click)="pararEscaneamento()">
+      Cancelar Leitura
+    </ion-button>
+  </div>
+</ion-content>

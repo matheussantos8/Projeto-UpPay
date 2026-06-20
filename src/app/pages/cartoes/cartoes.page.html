@@ -1,0 +1,94 @@
+<ion-content>
+  <div class="cartoes-header">
+    <div class="header-top">
+      <div class="header-esquerda">
+        <ion-button fill="clear" routerLink="/home" class="btn-back">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+        <h1>Meus Cartões</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="cartoes-container">
+    
+    <div class="tabs-cartoes">
+      <button 
+        [class.active]="tipoCartao === 'virtual'" 
+        (click)="tipoCartao = 'virtual'">
+        Virtual
+      </button>
+      <button 
+        [class.active]="tipoCartao === 'fisico'" 
+        (click)="tipoCartao = 'fisico'">
+        Físico
+      </button>
+    </div>
+
+    <div class="cartao-credito" [class.virtual-style]="tipoCartao === 'virtual'">
+      <div class="cartao-topo">
+        <span class="marca">UpPay</span>
+        <ion-icon name="hardware-chip-outline" class="chip"></ion-icon>
+      </div>
+      
+      <div class="cartao-meio">
+        @if (mostrarDados || tipoCartao === 'fisico') {
+          <p class="numero-cartao">{{ tipoCartao === 'virtual' ? '5412 •••• •••• 9876' : '5412 34•• •••• 1234' }}</p>
+        } @else {
+          <p class="numero-cartao">•••• •••• •••• ••••</p>
+        }
+        <p class="nome-titular">{{ nomeUsuario | uppercase }}</p>
+      </div>
+
+      <div class="cartao-base">
+        <div class="validade">
+          <span>Validade</span>
+          <p>12/31</p>
+        </div>
+        <div class="cvv">
+          <span>CVV</span>
+          <p>{{ mostrarDados && tipoCartao === 'virtual' ? '123' : '•••' }}</p>
+        </div>
+      </div>
+    </div>
+
+    @if (tipoCartao === 'virtual') {
+      <div class="action-row">
+        <ion-button fill="clear" class="btn-action-view" (click)="mostrarDados = !mostrarDados">
+          <ion-icon [name]="mostrarDados ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+          <span>{{ mostrarDados ? 'Ocultar dados' : 'Mostrar dados do cartão' }}</span>
+        </ion-button>
+      </div>
+    }
+
+    <p class="section-title">Fatura e Limite</p>
+    <div class="limite-card">
+      <div class="limite-linha">
+        <span class="label">Limite disponível:</span>
+        <span class="valor-limite">R$ 1.250,00</span>
+      </div>
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchida"></div>
+      </div>
+      <div class="limite-sub">
+        <span>Limite total: R$ 2.000,00</span>
+      </div>
+    </div>
+
+    <p class="section-title" style="margin-top: 20px;">Configurações</p>
+    <div class="config-lista">
+      <div class="config-item">
+        <div class="config-esquerda">
+          <ion-icon name="lock-open-outline"></ion-icon>
+          <div class="config-info">
+            <h3>Bloqueio temporário</h3>
+            <p>Bloquear transações no cartão</p>
+          </div>
+        </div>
+        <ion-toggle aria-label="Bloqueio temporário"></ion-toggle>
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

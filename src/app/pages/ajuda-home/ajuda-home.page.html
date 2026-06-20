@@ -1,0 +1,90 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/home" class="btn-back">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Central de Ajuda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ajuda-container">
+    
+    <div class="ajuda-welcome">
+      <ion-icon name="help-circle-outline" class="main-help-icon"></ion-icon>
+      <h2>Como podemos ajudar?</h2>
+      <p>Selecione um dos tópicos abaixo para entender como usar as funcionalidades do UpPay.</p>
+    </div>
+
+    <div class="ajuda-lista">
+      
+      <div class="ajuda-item">
+        <button class="ajuda-header" (click)="alternarTopico(1)">
+          <div class="header-esquerda">
+            <ion-icon name="cash-outline" class="icon-pix"></ion-icon>
+            <span>Como fazer um Pix?</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" [class.rotated]="topicoAberto === 1"></ion-icon>
+        </button>
+        
+        @if (topicoAberto === 1) {
+          <div class="ajuda-body">
+            <p>Para transferir via Pix, clique no botão <strong>❖ Pix</strong> na tela inicial, digite o e-mail do destinatário cadastrado no app, o valor desejado e confirme. A transferência é instantânea e segura!</p>
+          </div>
+        }
+      </div>
+
+      <div class="ajuda-item">
+        <button class="ajuda-header" (click)="alternarTopico(2)">
+          <div class="header-esquerda">
+            <ion-icon name="list-outline" class="icon-extrato"></ion-icon>
+            <span>Consultar o Extrato</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" [class.rotated]="topicoAberto === 2"></ion-icon>
+        </button>
+        
+        @if (topicoAberto === 2) {
+          <div class="ajuda-body">
+            <p>No botão <strong>📋 Extrato</strong> você confere as últimas movimentações da sua conta. É possível ver os detalhes de quem enviou ou recebeu o dinheiro, além da data exata da transação.</p>
+          </div>
+        }
+      </div>
+
+      <div class="ajuda-item">
+        <button class="ajuda-header" (click)="alternarTopico(3)">
+          <div class="header-esquerda">
+            <ion-icon name="card-outline" class="icon-cartao"></ion-icon>
+            <span>Gerenciar Cartões</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" [class.rotated]="topicoAberto === 3"></ion-icon>
+        </button>
+        
+        @if (topicoAberto === 3) {
+          <div class="ajuda-body">
+            <p>A seção de cartões permite que você visualize seus cartões de débito e crédito virtuais ativos para compras online com total praticidade.</p>
+          </div>
+        }
+      </div>
+
+      <div class="ajuda-item">
+        <button class="ajuda-header" (click)="alternarTopico(4)">
+          <div class="header-esquerda">
+            <ion-icon name="trending-up-outline" class="icon-investir"></ion-icon>
+            <span>Como funciona o "Investir"?</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" [class.rotated]="topicoAberto === 4"></ion-icon>
+        </button>
+        
+        @if (topicoAberto === 4) {
+          <div class="ajuda-body">
+            <p>Na aba de investimentos, você pode aplicar o saldo parado da sua conta para render acima da poupança de forma simples, acompanhando a evolução direto pelo app.</p>
+          </div>
+        }
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

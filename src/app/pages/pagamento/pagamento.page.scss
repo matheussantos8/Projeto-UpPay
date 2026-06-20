@@ -1,0 +1,149 @@
+ion-content {
+  --background: var(--ion-color-primary);
+}
+
+.pagamento-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px 20px 20px;
+
+  .btn-back {
+    --color: #000000;
+    background: #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  h1 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 2px;
+    padding-left: 40px;
+  }
+
+  .btn-help {
+    --color: #ffffff;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+}
+
+.pagamento-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 10px 0 5px 0;
+}
+
+ion-item {
+  width: 100%;
+  --background: #526a77; 
+  --color: #ffffff;      
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 10px;
+
+  ion-input {
+    color: #ffffff;
+    --color: #cccccc; 
+    --highlight-color-focused: #ffffff;
+
+    &.input-has-value .label-text-wrapper,
+    &.ion-focused .label-text-wrapper {
+      color: #ffffff;
+    }
+  }
+
+  .btn-avancar {
+    --color: #ffffff;
+    margin: 0;
+    height: 100%;
+    font-size: 1.4rem;
+    --padding-end: 0;
+    --padding-start: 10px;
+  }
+}
+
+.scan-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  .scan-box {
+    background: #526a77;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    gap: 8px;
+    cursor: pointer;
+
+    ion-icon {
+      font-size: 2rem;
+    }
+
+    span {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}
+
+ion-content.camera-active {
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+.scanner-ui-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.4);
+
+  .mira-scanner {
+    width: 250px;
+    height: 250px;
+    border: 3px solid #ffffff;
+    border-radius: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+    box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-cancelar-scan {
+    width: 100%;
+    --border-radius: 12px;
+    height: 48px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,152 @@
+ion-content {
+    --background: var(--ion-color-primary);
+  }
+  
+  .ajuda-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px 20px 20px;
+  
+    .btn-back {
+      --color: #000000;
+      background: #ffffff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      --padding-start: 0;
+      --padding-end: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+  
+    h1 {
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 0;
+      padding-bottom: 2px;
+    }
+  
+    .spacer {
+      width: 40px;
+    }
+  }
+  
+  .ajuda-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  
+    .ajuda-welcome {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 10px 0;
+  
+      .main-help-icon {
+        font-size: 4rem;
+        color: #cccccc;
+        margin-bottom: 10px;
+      }
+  
+      h2 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 0 0 8px 0;
+      }
+  
+      p {
+        font-size: 0.9rem;
+        color: #cccccc;
+        margin: 0;
+        line-height: 1.4;
+      }
+    }
+  
+    .ajuda-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+  
+      .ajuda-item {
+        background: #526a77;
+        border: 1px solid #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+  
+        .ajuda-header-btn {
+          width: 100%;
+          background: transparent;
+          border: none;
+          margin: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 18px;
+          color: #ffffff;
+          text-align: left;
+          cursor: pointer;
+  
+          &:focus {
+            outline: none;
+          }
+  
+          .header-esquerda {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+  
+            ion-icon {
+              font-size: 1.4rem;
+              color: #ffffff;
+            }
+  
+            span {
+              font-size: 1rem;
+              font-weight: 600;
+            }
+          }
+  
+          ion-icon[name="chevron-forward-outline"] {
+            font-size: 1.2rem;
+            color: #cccccc;
+            transition: transform 0.3s ease;
+  
+            &.rotated {
+              transform: rotate(90deg);
+            }
+          }
+        }
+  
+        .ajuda-body {
+          padding: 0 18px 18px 18px;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          animation: fadeIn 0.25s ease-in-out;
+  
+          p {
+            font-size: 0.9rem;
+            color: #ffffff;
+            line-height: 1.5;
+            margin: 12px 0 0 0;
+  
+            strong {
+              color: #ffffff;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

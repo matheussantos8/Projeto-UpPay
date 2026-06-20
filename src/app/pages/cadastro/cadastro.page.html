@@ -1,0 +1,56 @@
+<ion-content>
+  <div class="header-container">
+    <h1>CADASTRO</h1>
+    <img src="assets/icon/splash.png" alt="Logo UpPay">
+  </div>
+
+  <div class="form-container">
+    <h2>Crie sua conta UpPay</h2>
+    
+    <ion-item lines="none" class="custom-input">
+      <ion-input 
+        type="text" 
+        label="Nome Completo" 
+        labelPlacement="floating" 
+        [(ngModel)]="nome"
+        name="nome"> </ion-input>
+    </ion-item>
+    
+    <ion-item lines="none" class="custom-input">
+      <ion-input 
+        type="text" 
+        label="CPF" 
+        labelPlacement="floating" 
+        (ionInput)="formatarCPF($event)" 
+        maxlength="14" 
+        [(ngModel)]="cpf"
+        name="cpf"> </ion-input>
+    </ion-item>
+    
+    <ion-item lines="none" class="custom-input">
+      <ion-input 
+        type="email" 
+        label="E-mail" 
+        labelPlacement="floating" 
+        [(ngModel)]="email"
+        name="email"> </ion-input>
+    </ion-item>
+    
+    <ion-item lines="none" class="custom-input">
+      <ion-input 
+        [type]="mostrarSenha ? 'text' : 'password'" 
+        label="Senha" 
+        labelPlacement="floating" 
+        [(ngModel)]="senha"
+        name="senha"> <ion-button slot="end" fill="clear" class="btn-olho" (click)="mostrarSenha = !mostrarSenha">
+        </ion-button> 
+      </ion-input>
+    </ion-item>
+    
+    <ion-button expand="block" class="btn-primary" (click)="realizarCadastro()">CADASTRAR</ion-button>
+
+    <p class="redirect-text">
+      Já tem uma conta? <a routerLink="/login">Faça Login</a>
+    </p>
+  </div>
+</ion-content>

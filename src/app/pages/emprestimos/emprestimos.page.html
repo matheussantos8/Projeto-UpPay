@@ -1,0 +1,78 @@
+<ion-content>
+  <div class="emprestimos-header">
+    <div class="header-top">
+      <div class="header-esquerda">
+        <ion-button fill="clear" routerLink="/home" class="btn-back">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+        <h1>Empréstimos</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="emprestimos-container">
+    
+    <p class="section-title">Quanto você precisa?</p>
+    <ion-item lines="none" class="custom-input">
+      <ion-input 
+        type="text" 
+        label="Valor do empréstimo..." 
+        labelPlacement="floating" 
+        [(ngModel)]="valorMascarado"
+        (ionInput)="formatarMoeda($event)"
+        inputmode="numeric">
+      </ion-input>
+    </ion-item>
+
+    <p class="section-title" style="margin-top: 16px;">Número de parcelas</p>
+    <div class="parcelas-scroll">
+      @for (opcao of opcoesParcelas; track opcao) {
+        <div 
+          class="parcela-item" 
+          [class.selected]="parcelasSelecionadas === opcao" 
+          (click)="selecionarParcela(opcao)">
+          <span>{{ opcao }}x</span>
+        </div>
+      }
+    </div>
+
+    @if (valorSimulado > 0) {
+      <div class="simulacao-card">
+        <div class="simulacao-linha">
+          <span class="label">Valor das parcelas:</span>
+          <span class="valor-destaque">{{ parcelasSelecionadas }}x de {{ calcularParcela() }}</span>
+        </div>
+        <div class="simulacao-linha">
+          <span class="label">Total a pagar (com juros de 4.99% a.m.):</span>
+          <span class="valor-sub">{{ calcularTotal() }}</span>
+        </div>
+      </div>
+
+      <ion-button expand="block" class="btn-solicitar" (click)="contratarEmprestimo()">
+        Contratar Empréstimo
+      </ion-button>
+    }
+
+    <p class="section-title" style="margin-top: 25px;">Seus Empréstimos Ativos</p>
+    <div class="emprestimos-lista">
+      @if (emprestimosAtivos.length === 0) {
+        <div class="empty-state">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <p>Você não possui nenhum empréstimo contratado.</p>
+        </div>
+      } @else {
+        @for (emp of emprestimosAtivos; track emp.id) {
+          <div class="emprestimo-card-ativo">
+            <div class="card-ativo-header">
+              <span class="status">Ativo</span>
+              <span class="data">{{ emp.data }}</span>
+            </div>
+            <h3>R$ {{ emp.valor.toFixed(2).replace('.', ',') }}</h3>
+            <p>{{ emp.parcelas }} parcelas restantes</p>
+          </div>
+        }
+      }
+    </div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-content>
+  <div class="extrato-wrapper">
+    
+    <div class="extrato-header">
+      <ion-button fill="clear" routerLink="/home" class="btn-back">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+      <h1>Conta</h1>
+      <div class="spacer"></div>
+    </div>
+
+    <div class="saldo-card">
+      <div class="saldo-header">
+        <span>Saldo</span>
+        <button class="btn-olho" (click)="exibirSaldo = !exibirSaldo">
+          <ion-icon [name]="exibirSaldo ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+        </button>
+      </div>
+      <h2 class="saldo-valor">
+        @if (exibirSaldo) {
+          {{ saldoValor }}
+        } @else {
+          R$ ******
+        }
+      </h2>
+    </div>
+
+    <div class="transacoes-section">
+      <div class="transacoes-header">
+        <h2>Últimas transações</h2>
+        <ion-icon name="search-outline" class="search-icon"></ion-icon>
+      </div>
+
+      <div class="transacoes-lista">
+        @for (item of (extratoExpandido ? historicoCompleto : transacoesResumo); track item) {
+          <div class="transacao-item">
+            <div class="item-esquerda">
+              <ion-icon 
+                [name]="item.entrada ? 'arrow-up-circle-outline' : 'arrow-down-circle-outline'"
+                [ngClass]="item.entrada ? 'icon-entrada' : 'icon-saida'">
+              </ion-icon>
+              <div class="item-info">
+                <h3>{{ item.tipo }}</h3>
+                <p>{{ item.nome }}</p>
+              </div>
+            </div>
+            
+            <div class="item-direita">
+              <span [ngClass]="item.entrada ? 'valor-entrada' : 'valor-saida'">{{ item.valor }}</span>
+              <p class="item-data">{{ item.data }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <ion-button expand="block" class="btn-extrato" (click)="extratoExpandido = !extratoExpandido">
+        {{ extratoExpandido ? 'Ocultar extrato' : 'Mostrar extrato' }}
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>

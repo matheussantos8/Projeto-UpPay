@@ -1,0 +1,49 @@
+<ion-content>
+  <div class="ajuda-header">
+    <ion-button fill="clear" routerLink="/receber-pagamento" class="btn-back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <h1>Ajuda: Receber Pix</h1>
+    <div class="spacer"></div>
+  </div>
+
+  <div class="ajuda-container">
+    <div class="ajuda-welcome">
+      <ion-icon name="qr-code-outline" class="main-help-icon"></ion-icon>
+      <h2>Dúvidas sobre Recebimentos</h2>
+      <p>Entenda como cobrar ou gerar códigos de pagamento no UpPay.</p>
+    </div>
+
+    <div class="ajuda-lista">
+      <div class="ajuda-item">
+        <button class="ajuda-header-btn" (click)="alternarTopico(1)">
+          <div class="header-esquerda">
+            <ion-icon name="cash-outline"></ion-icon>
+            <span>Preciso digitar valor?</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" [class.rotated]="topicoAberto === 1"></ion-icon>
+        </button>
+        @if (topicoAberto === 1) {
+          <div class="ajuda-body">
+            <p>Não, o valor é <strong>opcional</strong>. Se você deixar o campo em branco e clicar na seta, será gerado um QR Code com valor em aberto, permitindo que a pessoa que vai pagar escolha o valor na hora.</p>
+          </div>
+        }
+      </div>
+
+      <div class="ajuda-item">
+        <button class="ajuda-header-btn" (click)="alternarTopico(2)">
+          <div class="header-esquerda">
+            <ion-icon name="share-social-outline"></ion-icon>
+            <span>Como enviar o código?</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" [class.rotated]="topicoAberto === 2"></ion-icon>
+        </button>
+        @if (topicoAberto === 2) {
+          <div class="ajuda-body">
+            <p>Após gerar o QR Code, você pode mostrar a tela do celular para a pessoa escanear ou clicar no botão <strong>Copiar Código Pix</strong> para colar o código de texto e enviar por mensagem.</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</ion-content>

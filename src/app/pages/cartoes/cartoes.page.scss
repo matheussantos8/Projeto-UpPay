@@ -1,0 +1,284 @@
+ion-content {
+    --background: var(--ion-color-primary);
+  }
+  
+  .cartoes-header {
+    padding: 40px 20px 20px 20px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+  
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .header-esquerda {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+  
+        .btn-back {
+          --color: #000000;
+          background: #ffffff;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          margin: 0;
+          --padding-start: 0;
+          --padding-end: 0;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+      }
+  
+      h1 {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0;
+      }
+  
+      .btn-help {
+        --color: #ffffff;
+        font-size: 1.6rem;
+        margin: 0;
+      }
+    }
+  }
+  
+  .cartoes-container {
+    padding: 10px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tabs-cartoes {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 20px;
+  
+    button {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #cccccc;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+  
+      &.active {
+        background: #526a77;
+        color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+    }
+  }
+  
+  .cartao-credito {
+    background: linear-gradient(135deg, #1f2d36 0%, #344651 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  
+    &.virtual-style {
+      background: linear-gradient(135deg, #2d3e48 0%, #526a77 100%);
+    }
+  
+    .cartao-topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .marca {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+  
+      .chip {
+        color: #dfb236;
+        font-size: 2rem;
+      }
+    }
+  
+    .cartao-meio {
+      .numero-cartao {
+        color: #ffffff;
+        font-size: 1.3rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+        margin: 0 0 4px 0;
+      }
+  
+      .nome-titular {
+        color: #cccccc;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+    }
+  
+    .cartao-base {
+      display: flex;
+      gap: 30px;
+  
+      .validade, .cvv {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+  
+        span {
+          color: #99aaaa;
+          font-size: 0.65rem;
+          text-transform: uppercase;
+        }
+  
+        p {
+          color: #ffffff;
+          font-size: 0.85rem;
+          font-weight: bold;
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  .action-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+  
+    .btn-action-view {
+      --color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0;
+  
+      ion-icon {
+        margin-right: 6px;
+      }
+    }
+  }
+  
+  .section-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+  }
+  
+  .limite-card {
+    background: #526a77;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    .limite-linha {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+  
+      .label {
+        color: #cccccc;
+        font-size: 0.85rem;
+      }
+  
+      .valor-limite {
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+    }
+  
+    .barra-progresso-container {
+      background: rgba(255, 255, 255, 0.2);
+      height: 6px;
+      border-radius: 3px;
+      width: 100%;
+      overflow: hidden;
+  
+      .barra-progresso-preenchida {
+        background: #ffffff;
+        height: 100%;
+        width: 62%;
+      }
+    }
+  
+    .limite-sub {
+      color: #cccccc;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .config-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  
+    .config-item {
+      background: #526a77;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .config-esquerda {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+  
+        ion-icon {
+          font-size: 1.3rem;
+          color: #ffffff;
+        }
+  
+        .config-info {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+  
+          h3 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin: 0;
+          }
+  
+          p {
+            color: #cccccc;
+            font-size: 0.75rem;
+            margin: 0;
+          }
+        }
+      }
+  
+      .arrow {
+        color: #cccccc;
+        font-size: 1rem;
+      }
+  
+      ion-toggle {
+        --background: rgba(255, 255, 255, 0.2);
+        --handle-background: #ffffff;
+        --background-checked: #2dd36f;
+        --handle-background-checked: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }

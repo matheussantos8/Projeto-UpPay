@@ -1,0 +1,58 @@
+<ion-content>
+  <div class="shop-header">
+    <div class="header-top">
+      <div class="header-esquerda">
+        <ion-button fill="clear" routerLink="/home" class="btn-back">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-button>
+        <h1>UpPay Shop</h1>
+      </div>
+      <ion-button fill="clear" routerLink="/ajuda" class="btn-help">
+        <ion-icon name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </div>
+    
+    <div class="saldo-card">
+      <span class="saldo-label">Seu saldo disponível</span>
+      <h2 class="saldo-valor">{{ saldoValor }}</h2>
+    </div>
+  </div>
+
+  <div class="shop-container">
+    <p class="section-title">Categorias</p>
+    <div class="categorias-scroll">
+      <div class="categoria-item" (click)="filtrarCategoria('games')">
+        <div class="categoria-icon"><ion-icon name="game-controller-outline"></ion-icon></div>
+        <span>Games</span>
+      </div>
+      <div class="categoria-item" (click)="filtrarCategoria('streaming')">
+        <div class="categoria-icon"><ion-icon name="play-circle-outline"></ion-icon></div>
+        <span>Streaming</span>
+      </div>
+      <div class="categoria-item" (click)="filtrarCategoria('transporte')">
+        <div class="categoria-icon"><ion-icon name="car-outline"></ion-icon></div>
+        <span>Transporte</span>
+      </div>
+      <div class="categoria-item" (click)="filtrarCategoria('comida')">
+        <div class="categoria-icon"><ion-icon name="fast-food-outline"></ion-icon></div>
+        <span>Delivery</span>
+      </div>
+    </div>
+
+    <p class="section-title">Gift Cards em Destaque</p>
+    <div class="produtos-grid">
+      @for (produto of produtos; track produto.id) {
+        <div class="produto-card" (click)="comprarProduto(produto)">
+          <div class="produto-banner" [style.background]="produto.corFundo">
+            <ion-icon [name]="produto.icone" class="produto-icon"></ion-icon>
+          </div>
+          <div class="produto-info">
+            <h3>{{ produto.nome }}</h3>
+            <p class="produto-categoria">{{ produto.categoriaExibicao }}</p>
+            <span class="produto-preco">A partir de R$ {{ produto.precoMinimo }},00</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</ion-content>

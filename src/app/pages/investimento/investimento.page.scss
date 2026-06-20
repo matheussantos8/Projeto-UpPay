@@ -1,0 +1,155 @@
+.custom-toolbar {
+    --background: #ffffff;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .header-investir {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  
+    .btn-back {
+      --color: #000000;
+      background: #d9d9d9;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      margin: 0;
+      --padding-start: 0;
+      --padding-end: 0;
+    }
+  
+    h1 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #000000;
+      margin: 0;
+    }
+  }
+  
+  ion-content {
+    --background: var(--ion-color-primary);
+  }
+  
+  .investir-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .summary-card {
+    background-color: #526a77;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    color: #ffffff;
+  
+    span {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 6px 0;
+    }
+  
+    p {
+      font-size: 0.85rem;
+      margin: 4px 0 0 0;
+      opacity: 0.9;
+    }
+  }
+  
+  .section-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+  }
+  
+  .moedas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .moeda-item {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .moeda-info-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  
+    .moeda-icon-frame {
+      background-color: #f0f2f5;
+      color: var(--ion-color-primary);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+  
+    h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #000000;
+    }
+  
+    p {
+      margin: 2px 0 0 0;
+      font-size: 0.8rem;
+      color: #666666;
+    }
+  }
+  
+  .moeda-info-direita {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  
+    .moeda-valor {
+      font-weight: bold;
+      color: #000000;
+      font-size: 0.95rem;
+    }
+  
+    .moeda-variacao {
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      
+      ion-icon {
+        font-size: 0.9rem;
+      }
+    }
+  
+    .texto-alta {
+      color: #2dd36f; 
+    }
+  
+    .texto-baixa {
+      color: #eb445a;
+    }
+  }

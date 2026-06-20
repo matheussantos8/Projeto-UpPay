@@ -1,0 +1,136 @@
+$bg-escuro: #12283c; 
+$card-cor: #5b7582;
+$texto-claro: #ffffff;
+$texto-mutado: #b0c4de;
+
+.custom-toolbar {
+  --background: #{$bg-escuro};
+  --color: #{$texto-claro};
+  
+  ion-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+}
+
+.btn-back {
+  --color: #{$texto-claro};
+  font-size: 1.4rem;
+}
+
+.ajuda-container {
+  padding: 20px;
+  background: #{$bg-escuro};
+  min-height: 100%;
+  color: #{$texto-claro};
+
+  .ajuda-welcome {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px 0;
+
+    .main-help-icon {
+      font-size: 4rem;
+      color: #{$texto-mutado};
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #{$texto-mutado};
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+
+  .ajuda-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .ajuda-item {
+      background: #{$card-cor};
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      .ajuda-header {
+        width: 100%;
+        background: transparent;
+        border: none;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px;
+        color: #{$texto-claro};
+        text-align: left;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+        }
+
+        .header-esquerda {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          ion-icon {
+            font-size: 1.4rem;
+            color: #{$texto-claro};
+          }
+
+          span {
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+
+        ion-icon[name="chevron-forward-outline"] {
+          font-size: 1.2rem;
+          color: #{$texto-mutado};
+          transition: transform 0.3s ease;
+
+          &.rotated {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .ajuda-body {
+        padding: 0 18px 18px 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        animation: fadeIn 0.25s ease-in-out;
+
+        p {
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.5;
+          margin: 12px 0 0 0;
+
+          strong {
+            color: #{$texto-claro};
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

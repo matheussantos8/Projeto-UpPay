@@ -1,0 +1,104 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="custom-toolbar">
+    <div class="header-profile">
+      <div class="user-info">
+        <ion-avatar>
+          <ion-icon name="person-outline" class="avatar-icon"></ion-icon>
+        </ion-avatar>
+        <span class="username">{{ nomeUsuario }}</span>
+      </div>
+      <div class="header-actions">
+        <ion-button fill="clear" routerLink="/ajuda-home" class="btn-icon-top">
+          <ion-icon name="help-circle-outline"></ion-icon>
+        </ion-button>
+        <div class="flag-container">
+          <img src="https://flagcdn.com/w40/br.png" alt="Brasil">
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="dashboard-container">
+    
+    <div class="balance-card">
+      <div class="balance-header">
+        <span>Saldo</span>
+        <ion-button fill="clear" (click)="exibirSaldo = !exibirSaldo" class="btn-eye">
+          <ion-icon [name]="exibirSaldo ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+        </ion-button>
+      </div>
+      <div class="balance-value">
+        @if (exibirSaldo) {
+          <h2>{{ saldoValor }}</h2>
+        } @else {
+          <h2>R$ ******</h2>
+        }
+      </div>
+    </div>
+
+    <div class="quick-actions-row">
+      <button class="action-pill" routerLink="/pix">
+        <div class="pill-content">❖ Pix</div>
+      </button>
+      <button class="action-pill" routerLink="/extrato">
+        <div class="pill-content">📋 Extrato</div>
+      </button>
+      <button class="action-pill">
+        <div class="pill-content" routerLink="/cartoes">💳 Cartões</div>
+      </button>
+    </div>
+
+    <div class="features-grid">
+      <button class="feature-card">
+        <ion-icon name="wallet-outline" routerLink="/investimento"></ion-icon>
+        <span>Investir</span>
+      </button>
+      <button class="feature-card">
+        <ion-icon name="business-outline" routerLink="/emprestimos"></ion-icon>
+        <span>Empréstimos</span>
+      </button>
+      <button class="feature-card">
+        <ion-icon name="bag-handle-outline" routerLink="/shop"></ion-icon>
+        <span>Shop</span>
+      </button>
+    </div>
+
+    @if (noticiaAtual) {
+      <div class="news-banner" [style.background]="noticiaAtual.corFundo">
+        <div class="news-content">
+          <div class="news-tag">Dica UpPay</div>
+          <h2>{{ noticiaAtual.titulo }}</h2>
+          <p>{{ noticiaAtual.descricao }}</p>
+        </div>
+        <div class="news-icon-container">
+          <ion-icon [name]="noticiaAtual.icone"></ion-icon>
+        </div>
+      </div>
+    }
+
+  </div>
+</ion-content>
+
+<ion-tab-bar slot="bottom" class="custom-tabbar">
+  <ion-tab-button tab="inicio" selected>
+    <ion-icon name="home-outline"></ion-icon>
+    <ion-label>Início</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button tab="investir">
+    <ion-icon name="wallet-outline" routerLink="/investimento"></ion-icon>
+    <ion-label>Investir</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button tab="shop">
+    <ion-icon name="bag-handle-outline" routerLink="/shop"></ion-icon>
+    <ion-label>Shop</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button tab="todos">
+    <ion-icon name="grid-outline" routerLink="/todos"></ion-icon>
+    <ion-label>Todos</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

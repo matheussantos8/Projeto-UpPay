@@ -1,0 +1,210 @@
+ion-content {
+    --background: var(--ion-color-primary);
+  }
+  
+  .emprestimos-header {
+    padding: 40px 20px 20px 20px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+  
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .header-esquerda {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+  
+        .btn-back {
+          --color: #000000;
+          background: #ffffff;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          margin: 0;
+          --padding-start: 0;
+          --padding-end: 0;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+      }
+  
+      h1 {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0;
+      }
+  
+      .btn-help {
+        --color: #ffffff;
+        font-size: 1.6rem;
+        margin: 0;
+      }
+    }
+  }
+  
+  .emprestimos-container {
+    padding: 10px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+  }
+  
+  ion-item {
+    width: 100%;
+    --background: #526a77; 
+    --color: #ffffff;      
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+  
+    ion-input {
+      color: #ffffff;
+      --color: #cccccc; 
+      --highlight-color-focused: #ffffff;
+    }
+  }
+  
+  .parcelas-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .parcela-item {
+      background: #526a77;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      padding: 12px 20px;
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+      min-width: 60px;
+      text-align: center;
+  
+      &.selected {
+        background: #ffffff;
+        color: var(--ion-color-primary);
+        border-color: #ffffff;
+      }
+    }
+  }
+  
+  .simulacao-card {
+    background: #526a77;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  
+    .simulacao-linha {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+  
+      .label {
+        color: #cccccc;
+        font-size: 0.85rem;
+      }
+  
+      .valor-destaque {
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+  
+      .valor-sub {
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .btn-solicitar {
+    --background: #ffffff;
+    --color: var(--ion-color-primary);
+    --border-radius: 12px;
+    font-weight: bold;
+    height: 48px;
+    margin-top: 16px;
+  }
+  
+  .emprestimos-lista {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  
+    .empty-state {
+      text-align: center;
+      padding: 30px 0;
+      color: #cccccc;
+  
+      ion-icon {
+        font-size: 3rem;
+        margin-bottom: 8px;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+  
+    .emprestimo-card-ativo {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 14px;
+  
+      .card-ativo-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+  
+        .status {
+          background: #2dd36f;
+          color: #000000;
+          padding: 2px 8px;
+          border-radius: 20px;
+          font-size: 0.75rem;
+          font-weight: bold;
+        }
+  
+        .data {
+          color: #cccccc;
+          font-size: 0.8rem;
+        }
+      }
+  
+      h3 {
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 4px 0 2px 0;
+      }
+  
+      p {
+        color: #cccccc;
+        font-size: 0.85rem;
+        margin: 0;
+      }
+    }
+  }

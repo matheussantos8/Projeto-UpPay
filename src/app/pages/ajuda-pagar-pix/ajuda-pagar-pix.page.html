@@ -1,0 +1,49 @@
+<ion-content>
+  <div class="ajuda-header">
+    <ion-button fill="clear" routerLink="/pagamento" class="btn-back">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <h1>Ajuda: Pagar Pix</h1>
+    <div class="spacer"></div>
+  </div>
+
+  <div class="ajuda-container">
+    <div class="ajuda-welcome">
+      <ion-icon name="phone-portrait-outline" class="main-help-icon"></ion-icon>
+      <h2>Dúvidas sobre Pagamentos</h2>
+      <p>Veja como utilizar a câmera ou códigos para enviar um Pix no UpPay.</p>
+    </div>
+
+    <div class="ajuda-lista">
+      <div class="ajuda-item">
+        <button class="ajuda-header-btn" (click)="alternarTopico(1)">
+          <div class="header-esquerda">
+            <ion-icon name="camera-outline"></ion-icon>
+            <span>Como usar o Escanear?</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" [class.rotated]="topicoAberto === 1"></ion-icon>
+        </button>
+        @if (topicoAberto === 1) {
+          <div class="ajuda-body">
+            <p>Toque no botão <strong>Escanear</strong> no final da tela de pagamento, dê permissão para o app acessar sua câmera e aponte para o QR Code de quem vai receber. O app preencherá os dados automaticamente.</p>
+          </div>
+        }
+      </div>
+
+      <div class="ajuda-item">
+        <button class="ajuda-header-btn" (click)="alternarTopico(2)">
+          <div class="header-esquerda">
+            <ion-icon name="copy-outline"></ion-icon>
+            <span>Onde colo o Copia e Cola?</span>
+          </div>
+          <ion-icon name="chevron-forward-outline" [class.rotated]="topicoAberto === 2"></ion-icon>
+        </button>
+        @if (topicoAberto === 2) {
+          <div class="ajuda-body">
+            <p>Você pode colar o código Pix Copia e Cola diretamente no campo <strong>Chave...</strong>. Quando você avançar ou clicar fora do campo, o aplicativo identifica o código sozinho e separa o e-mail e o valor.</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</ion-content>

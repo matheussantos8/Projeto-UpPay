@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="custom-toolbar">
+    <div class="header-investir">
+      <ion-button fill="clear" routerLink="/home" class="btn-back">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <h1>Investimentos</h1>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="investir-container">
+    
+    <div class="summary-card">
+      <span>Total Investido</span>
+      <h2>R$ 0,00</h2>
+      <p>Comece a render o seu dinheiro hoje!</p>
+    </div>
+
+    <p class="section-title">Mercado de Câmbio & Cripto</p>
+
+    <div class="moedas-lista">
+      @for (moeda of moedasMercado; track moeda.sigla) {
+        <div class="moeda-item">
+          <div class="moeda-info-esquerda">
+            <div class="moeda-icon-frame">
+              <ion-icon [name]="moeda.icone"></ion-icon>
+            </div>
+            <div>
+              <h3>{{ moeda.nome }}</h3>
+              <p>{{ moeda.sigla }}</p>
+            </div>
+          </div>
+
+          <div class="moeda-info-direita">
+            <span class="moeda-valor">{{ moeda.valor }}</span>
+            <span class="moeda-variacao" [ngClass]="{'texto-alta': moeda.alta, 'texto-baixa': !moeda.alta}">
+              <ion-icon [name]="moeda.alta ? 'trending-up-outline' : 'trending-down-outline'"></ion-icon>
+              {{ moeda.variacao }}
+            </span>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</ion-content>

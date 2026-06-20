@@ -1,0 +1,176 @@
+ion-content {
+    --background: #133144; 
+  }
+  
+  .extrato-wrapper {
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  
+  .extrato-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  
+    .btn-back {
+      --color: #000000;
+      font-size: 2rem;
+      margin: 0;
+      --padding-start: 0;
+      --padding-end: 0;
+    }
+  
+    h1 {
+      color: #ffffff;
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin: 0;
+    }
+  
+    .spacer {
+      width: 32px;
+    }
+  }
+  
+  .saldo-card {
+    background-color: #7a919e; 
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  
+    .saldo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffffff;
+  
+      span {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+  
+      .btn-olho {
+        background: none;
+        border: none;
+        color: #000000;
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+    }
+  
+    .saldo-valor {
+      color: #ffffff;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+  }
+  
+  .transacoes-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    .transacoes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      h2 {
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0;
+      }
+  
+      .search-icon {
+        color: #7a919e;
+        font-size: 1.3rem;
+      }
+    }
+  }
+  
+  .transacoes-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .transacao-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .item-esquerda {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+  
+      ion-icon {
+        font-size: 2.2rem;
+      }
+  
+      .icon-entrada {
+        color: #a4c2b1; 
+      }
+  
+      .icon-saida {
+        color: #e59a9a; 
+      }
+  
+      .item-info {
+        h3 {
+          color: #ffffff;
+          font-size: 0.95rem;
+          font-weight: 600;
+          margin: 0;
+        }
+        p {
+          color: #7a919e;
+          font-size: 0.8rem;
+          margin: 2px 0 0 0;
+        }
+      }
+    }
+  
+    .item-direita {
+      text-align: right;
+  
+      span {
+        font-size: 0.95rem;
+        font-weight: bold;
+      }
+  
+      .valor-entrada {
+        color: #00e676;
+      }
+  
+      .valor-saida {
+        color: #ff3d00; 
+      }
+  
+      .item-data {
+        color: #7a919e;
+        font-size: 0.75rem;
+        margin: 2px 0 0 0;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .btn-extrato {
+    margin-top: 20px;
+    --background: #b43232; 
+    --color: #ffffff;
+    --border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    height: 46px;
+  }
