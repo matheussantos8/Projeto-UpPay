@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonInput, IonButton, IonItem, IonSelect, IonSelectOption, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonInput, IonButton, IonItem, IonIcon } from '@ionic/angular/standalone';
 import { RouterLink, Router } from '@angular/router';
 import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth'; 
 import { addIcons } from 'ionicons';
@@ -12,7 +12,7 @@ import { eyeOutline, eyeOffOutline } from 'ionicons/icons';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonInput, IonButton, IonItem, IonSelect, IonSelectOption, IonIcon, CommonModule, FormsModule, RouterLink]
+  imports: [IonContent, IonInput, IonButton, IonItem, IonIcon, CommonModule, FormsModule, RouterLink]
 })
 export class LoginPage implements OnInit {
   tipoEntrada: string = 'email';

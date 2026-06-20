@@ -13,7 +13,7 @@ import { eyeOutline, eyeOffOutline } from 'ionicons/icons';
   templateUrl: './cadastro.page.html',
   styleUrls: ['./cadastro.page.scss'],
   standalone: true,
-  imports: [IonContent, IonInput, IonButton, IonItem, IonIcon, CommonModule, FormsModule, RouterLink]
+  imports: [IonContent, IonInput, IonButton, IonItem, CommonModule, FormsModule, RouterLink]
 })
 export class CadastroPage implements OnInit {
   nome: string = '';

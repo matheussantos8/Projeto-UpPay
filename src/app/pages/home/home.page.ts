@@ -21,7 +21,7 @@ import {
   standalone: true,
   imports: [
     IonContent, IonHeader, IonToolbar, IonAvatar, IonIcon, 
-    IonButton, IonTabs, IonTabBar, IonTabButton, IonLabel, 
+    IonButton, IonTabBar, IonTabButton, IonLabel, 
     CommonModule, FormsModule, RouterLink
   ]
 })
